@@ -1,5 +1,5 @@
 import AcmeLogo from '@/app/ui/acme-logo';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, ArrowDownRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import styles from '@/app/ui/home.module.css';
 import { lusitana } from './ui/fonts';
@@ -8,8 +8,27 @@ import Image from 'next/image'
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
+      <div className="flex h-20 shrink-0 items-center md:items-end rounded-lg bg-blue-500 p-4 md:h-52">
         <AcmeLogo />
+        <div className="flex-grow flex flex-row items-center justify-start text-2xl md:text-[44px]">
+          <Link
+            className={`${lusitana.className} rounded-md  ml-4 px-2 text-white leading-none hover:text-blue-500 hover:bg-white`}
+            href="/dashboard"
+          >
+            <div className="flex flex-row items-center ">
+              <span>Dashboard</span>
+              <ArrowDownRightIcon className="ml-3 h-8 w-8 md:h-12 md:w-12" />
+            </div>
+          </Link>
+          <Link
+            className={ `${lusitana.className} rounded-md  ml-4 px-2 text-white leading-none hover:text-blue-500 hover:bg-white`}
+            href="/other"
+          >
+            <div className="flex flex-row items-center ">
+              <span>Other</span>
+            </div>
+          </Link>
+        </div>
       </div>
       {/* <div className={styles.shape}></div> */}
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
